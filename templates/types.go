@@ -1,4 +1,4 @@
-package main
+package templates
 
 import (
 	"fmt"
@@ -9,10 +9,10 @@ const (
 	bannerWidth  = 52
 )
 
-type template [][]string
+type Template [][]string
 
-func NewTemplate() template {
-	result := make(template, bannerHeight)
+func New() Template {
+	result := make(Template, bannerHeight)
 	for i := 0; i < 7; i++ {
 		result[i] = make([]string, 0, bannerWidth)
 	}
@@ -20,21 +20,21 @@ func NewTemplate() template {
 
 }
 
-func (t template) SetDelimeter() template {
+func (t Template) SetDelimeter() Template {
 	for i := 0; i < bannerHeight; i++ {
 		t[i] = append(t[i], ".")
 	}
 	return t
 }
 
-func (t template) JoinObject(j template) template {
+func (t Template) JoinObject(j Template) Template {
 	for i := 0; i < bannerHeight; i++ {
 		t[i] = append(t[i], j[i]...)
 	}
 	return t
 }
 
-func (t template) Println() {
+func (t Template) Println() {
 	for i := 0; i < bannerHeight; i++ {
 		for _, v := range t[i] {
 			if v == "." {

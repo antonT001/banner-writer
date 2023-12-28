@@ -4,11 +4,13 @@ import (
 	"fmt"
 	"log"
 	"time"
+
+	"github.com/antonT001/banner-writer/templates"
 )
 
 func main() {
 	word := requestWord()
-	result := NewTemplate()
+	result := templates.New()
 	for _, r := range word {
 		result.SetDelimeter()
 		result.JoinObject(templateByRune(r))
@@ -50,82 +52,82 @@ func requestWord() string {
 	return value
 }
 
-func templateByRune(r rune) template {
+func templateByRune(r rune) templates.Template {
 	switch r {
 	case 'a', 'A':
-		return tmplA
+		return templates.TmplA
 	case 'b', 'B':
-		return tmplB
+		return templates.TmplB
 	case 'c', 'C':
-		return tmplC
+		return templates.TmplC
 	case 'd', 'D':
-		return tmplD
+		return templates.TmplD
 	case 'e', 'E':
-		return tmplE
+		return templates.TmplE
 	case 'f', 'F':
-		return tmplF
+		return templates.TmplF
 	case 'g', 'G':
-		return tmplG
+		return templates.TmplG
 	case 'h', 'H':
-		return tmplH
+		return templates.TmplH
 	case 'i', 'I':
-		return tmplI
+		return templates.TmplI
 	case 'j', 'J':
-		return tmplJ
+		return templates.TmplJ
 	case 'k', 'K':
-		return tmplK
+		return templates.TmplK
 	case 'l', 'L':
-		return tmplL
+		return templates.TmplL
 	case 'm', 'M':
-		return tmplM
+		return templates.TmplM
 	case 'n', 'N':
-		return tmplN
+		return templates.TmplN
 	case 'o', 'O':
-		return tmplO
+		return templates.TmplO
 	case 'p', 'P':
-		return tmplP
+		return templates.TmplP
 	case 'q', 'Q':
-		return tmplQ
+		return templates.TmplQ
 	case 'r', 'R':
-		return tmplR
+		return templates.TmplR
 	case 's', 'S':
-		return tmplS
+		return templates.TmplS
 	case 't', 'T':
-		return tmplT
+		return templates.TmplT
 	case 'u', 'U':
-		return tmplU
+		return templates.TmplU
 	case 'v', 'V':
-		return tmplV
+		return templates.TmplV
 	case 'w', 'W':
-		return tmplW
+		return templates.TmplW
 	case 'x', 'X':
-		return tmplX
+		return templates.TmplX
 	case 'y', 'Y':
-		return tmplY
+		return templates.TmplY
 	case 'z', 'Z':
-		return tmplZ
+		return templates.TmplZ
 	case '0':
-		return tmpl0
+		return templates.Tmpl0
 	case '1':
-		return tmpl1
+		return templates.Tmpl1
 	case '2':
-		return tmpl2
+		return templates.Tmpl2
 	case '3':
-		return tmpl3
+		return templates.Tmpl3
 	case '4':
-		return tmpl4
+		return templates.Tmpl4
 	case '5':
-		return tmpl5
+		return templates.Tmpl5
 	case '6':
-		return tmpl6
+		return templates.Tmpl6
 	case '7':
-		return tmpl7
+		return templates.Tmpl7
 	case '8':
-		return tmpl8
+		return templates.Tmpl8
 	case '9':
-		return tmpl9
+		return templates.Tmpl9
 	default:
-		return tmplUnknownSymbol
+		return templates.TmplUnknownSymbol
 	}
 
 }
