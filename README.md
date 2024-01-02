@@ -3,6 +3,9 @@
 <h2>
     Make a unique banner in your Github!
 </h2> 
+<p align="center">
+    <img src="hello-world.jpg"/>
+</p>
 
 Requirements:
 1. Installed git
