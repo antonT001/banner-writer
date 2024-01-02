@@ -28,9 +28,7 @@ make docker/run
 5. Wait for the process to complete
 6. Create a public repository at https://github.com
 7. Add the remote repository to a project on your computer
-```
-git remote add origin https://github.com/username/projectname.git
-```
+
 example: ```git remote add origin https://github.com/antonT001/hello-world.git```
 
 8. Push the project to the remote repository:
