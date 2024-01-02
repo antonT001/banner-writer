@@ -38,3 +38,8 @@ example: ```git remote add origin https://github.com/antonT001/hello-world.git``
 git push -u origin master
 ```
 9. Check the result
+
+<h2>
+    Quick video tutorial:
+</h2> 
+https://github.com/antonT001/banner-writer/assets/102325100/1c899658-ba40-414e-9c86-4bc8bd9ed7a4
