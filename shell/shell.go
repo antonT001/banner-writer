@@ -6,11 +6,6 @@ import (
 	"time"
 )
 
-const (
-	BannerWriter = "banner-writer"
-	ProjectPath  = "/opt/tmp/" + BannerWriter
-)
-
 type Shell struct {
 	time time.Time
 }
