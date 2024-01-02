@@ -37,7 +37,7 @@ func main() {
 
 	process.Run(tmpl, sh, bar)
 
-	fmt.Println("====Success====")
+	fmt.Println("\n\n====Success====")
 }
 
 func prepareDateTime(year string) time.Time {
