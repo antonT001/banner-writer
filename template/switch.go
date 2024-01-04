@@ -1,85 +1,86 @@
 package template
 
-import "log"
+import (
+	"log"
+)
+
+var data = [128]Template{}
+
+func init() {
+	data['A'] = TmplA
+	data['B'] = TmplB
+	data['C'] = TmplC
+	data['D'] = TmplD
+	data['E'] = TmplE
+	data['F'] = TmplF
+	data['G'] = TmplG
+	data['H'] = TmplH
+	data['I'] = TmplI
+	data['J'] = TmplJ
+	data['K'] = TmplK
+	data['L'] = TmplL
+	data['M'] = TmplM
+	data['N'] = TmplN
+	data['O'] = TmplO
+	data['P'] = TmplP
+	data['Q'] = TmplQ
+	data['R'] = TmplR
+	data['S'] = TmplS
+	data['T'] = TmplT
+	data['U'] = TmplU
+	data['V'] = TmplV
+	data['W'] = TmplW
+	data['X'] = TmplX
+	data['Y'] = TmplY
+	data['Z'] = TmplZ
+	data['0'] = Tmpl0
+	data['1'] = Tmpl1
+	data['2'] = Tmpl2
+	data['3'] = Tmpl3
+	data['4'] = Tmpl4
+	data['5'] = Tmpl5
+	data['6'] = Tmpl6
+	data['7'] = Tmpl7
+	data['8'] = Tmpl8
+	data['9'] = Tmpl9
+	data[' '] = TmplSpace
+	data['!'] = TmplExclamationMark
+	data['"'] = TmplDoubleQuote
+	data['$'] = TmplDollarSign
+	data['%'] = TmplPercentSign
+	data['('] = TmplRightParenthesis
+	data['\''] = TmplSingleQuote
+	data[')'] = TmplLeftParenthesis
+	data['*'] = TmplAsterisk
+	data['+'] = TmplPlusSign
+	data[','] = TmplComma
+	data['-'] = TmplHyphenMinus
+	data['.'] = TmplPeriod
+	data['/'] = TmplSlash
+	data[':'] = TmplColon
+	data[';'] = TmplSemicolon
+	data['<'] = TmplLessThanSign
+	data['='] = TmplEqualSign
+	data['>'] = TmplGreaterThanSign
+	data['?'] = TmplQuestionMark
+	data['['] = TmplLeftSquareBracket
+	data['\\'] = TmplBackslash
+	data[']'] = TmplRightSquareBracket
+	data['^'] = TmplCaret
+	data['_'] = TmplUnderscore
+	data['|'] = TmplVerticalBar
+	data['~'] = TmplTilde
+}
 
 func ByRune(r rune) Template {
-	switch r {
-	case 'a', 'A':
-		return TmplA
-	case 'b', 'B':
-		return TmplB
-	case 'c', 'C':
-		return TmplC
-	case 'd', 'D':
-		return TmplD
-	case 'e', 'E':
-		return TmplE
-	case 'f', 'F':
-		return TmplF
-	case 'g', 'G':
-		return TmplG
-	case 'h', 'H':
-		return TmplH
-	case 'i', 'I':
-		return TmplI
-	case 'j', 'J':
-		return TmplJ
-	case 'k', 'K':
-		return TmplK
-	case 'l', 'L':
-		return TmplL
-	case 'm', 'M':
-		return TmplM
-	case 'n', 'N':
-		return TmplN
-	case 'o', 'O':
-		return TmplO
-	case 'p', 'P':
-		return TmplP
-	case 'q', 'Q':
-		return TmplQ
-	case 'r', 'R':
-		return TmplR
-	case 's', 'S':
-		return TmplS
-	case 't', 'T':
-		return TmplT
-	case 'u', 'U':
-		return TmplU
-	case 'v', 'V':
-		return TmplV
-	case 'w', 'W':
-		return TmplW
-	case 'x', 'X':
-		return TmplX
-	case 'y', 'Y':
-		return TmplY
-	case 'z', 'Z':
-		return TmplZ
-	case '0':
-		return Tmpl0
-	case '1':
-		return Tmpl1
-	case '2':
-		return Tmpl2
-	case '3':
-		return Tmpl3
-	case '4':
-		return Tmpl4
-	case '5':
-		return Tmpl5
-	case '6':
-		return Tmpl6
-	case '7':
-		return Tmpl7
-	case '8':
-		return Tmpl8
-	case '9':
-		return Tmpl9
-	case ' ':
-		return TmplSpace
-	default:
+	// to upper
+	if r >= 'a' && r <= 'z' {
+		r -= 'a' - 'A'
+	}
+
+	if r >= 128 || data[r] == nil {
 		log.Fatalf("unsupported character: %s", string(r))
 	}
-	return nil
+
+	return data[r]
 }
