@@ -1,7 +1,6 @@
 package process
 
 import (
-	"fmt"
 	"log"
 	"os"
 
@@ -49,8 +48,8 @@ func Run(
 
 func commits(f *os.File, sh *shell.Shell, n int) {
 	for k := 0; k < n; k++ {
-		msg := fmt.Sprintln(uuid.New().String())
-		_, err := f.Write([]byte(msg))
+		msg := uuid.New().String()
+		_, err := f.Write([]byte("added new commit " + msg + "\n"))
 		if err != nil {
 			log.Fatal(err)
 		}
